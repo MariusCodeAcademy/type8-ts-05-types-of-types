@@ -41,6 +41,7 @@ function getNameTown(arr: SimpleUser[]): NameAndTownUser[] {
 }
 
 console.log(getNameTown(usersT));
+// console.log(getNameTown([1, 2]));
 
 const houses = [
   {

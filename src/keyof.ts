@@ -1,3 +1,12 @@
+type Dog = {
+  breed: 'doberman' | 'chichuahua';
+  longHair: boolean;
+  name: string;
+};
+
+// type DogBreed = Pick<Dog, 'breed'>;
+type DogBreed = Dog['breed'];
+
 type UserFull = {
   readonly id: number;
   name: string;
@@ -21,7 +30,13 @@ type UserFull = {
     bs: string;
   };
 };
-const userFull: UserFull = {
+
+// gauti UserFull tipo kopija
+type UserFullCopy = {
+  [key in keyof UserFull]: UserFull[key];
+};
+
+const userFull11: UserFull = {
   id: 1,
   name: 'Leanne Graham',
   username: 'Bret',
