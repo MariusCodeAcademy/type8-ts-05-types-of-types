@@ -21,7 +21,7 @@ type UserFull = {
     bs: string;
   };
 };
-const userFull: uFull = {
+const userFull: UserFull = {
   id: 1,
   name: 'Leanne Graham',
   username: 'Bret',
