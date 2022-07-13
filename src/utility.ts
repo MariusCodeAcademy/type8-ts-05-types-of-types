@@ -18,6 +18,18 @@ const opUser: OptionalOurUser = {
 
 type ReqUser = Required<OurUser>;
 
+// sukurti nauja tippa pagal OurUser kuriame buti tik id, name, username
+type OnlyUser = Pick<ReqUser, 'id' | 'name' | 'username'>;
+
+const onluUser: OnlyUser = {
+  id: 457,
+  name: 'Jill',
+  username: 'Jilltional',
+};
+
+// sukurti nauja tippa pagal OurUser kuriame nera id, name, username
+type NoIdNameUserName = Omit<ReqUser, 'id' | 'name' | 'username'>;
+
 const user2: OurUser = {
   id: 2,
   name: 'James',
