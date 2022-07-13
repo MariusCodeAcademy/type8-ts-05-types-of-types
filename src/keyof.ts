@@ -4,6 +4,16 @@ type Dog = {
   name: string;
 };
 
+type Cat = {
+  [key: string]: string | number;
+};
+
+const cat1: Cat = {
+  breed: 'paprastas',
+  town: 'Vilnius',
+  id: 5,
+};
+
 // type DogBreed = Pick<Dog, 'breed'>;
 type DogBreed = Dog['breed'];
 
@@ -33,7 +43,29 @@ type UserFull = {
 
 // gauti UserFull tipo kopija
 type UserFullCopy = {
-  [key in keyof UserFull]: UserFull[key];
+  [propertyName in keyof UserFull]: UserFull[propertyName];
+};
+
+type UserFullNoObjects = Omit<UserFull, 'company' | 'address'>;
+
+type UserFullTypeString = {
+  [propertyName in keyof UserFull]: string;
+};
+type UserFullTypeStringNr = {
+  [propertyName in keyof UserFull]: string | number;
+};
+
+type UserFullOptional = {
+  [propertyName in keyof UserFull]?: UserFull[propertyName];
+};
+type UserFullReadOnly = {
+  readonly [propertyName in keyof UserFull]: UserFull[propertyName];
+};
+type UserFullNoReadOnly = {
+  -readonly [propertyName in keyof UserFull]: UserFull[propertyName];
+};
+type UserFullNoOptional = {
+  [propertyName in keyof UserFull]-?: UserFull[propertyName];
 };
 
 const userFull11: UserFull = {
