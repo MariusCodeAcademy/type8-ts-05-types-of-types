@@ -25,4 +25,40 @@ const rez = {
   u_3: { name: 'Serbentautas', town: 'Klaipeda', hasDog: true },
 };
 
-// sukurti funkcija kuri perdaro is usersT ir rez
+const houses = [
+  {
+    id: 457,
+    colors: {
+      roof: 'darkRed',
+      fasad: 'grey',
+    },
+    forSale: false,
+    geo: {
+      lat: -37.3159,
+      lng: 81.1496,
+    },
+  },
+  {
+    id: 457,
+    colors: {
+      roof: 'tomato',
+      fasad: 'grey',
+    },
+    forSale: true,
+  },
+];
+
+// aprasyti tipa houses
+// is aprasyto tipo sukurti nauja tipa kuriame butu tik spalvos
+// is aprasyto tipo sukurti tipa kuriame visos savybes butu readOnly
+
+// sukurti funkcija kuri priima argumentu usersT tipo masyva ir grazina
+// 1 rez tipo masyva
+// 2 grazina masyva kurio objektai turi tik name ir town
+// 3 grazina usersT tipo masyva su visom neprivalomom reiksmem
+// 4 grazina masyva kuriame yra masyvas, kurio pirmas elemnetas yra id, o antrras ar turi suni. Tipai pagal usersT
+// [
+//   ['u_1', false],
+//   ['u_2', true],
+//   ['u_3', true],
+// ];
