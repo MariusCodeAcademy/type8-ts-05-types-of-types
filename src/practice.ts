@@ -1,4 +1,10 @@
-const usersT = [
+interface SimpleUser {
+  id: string;
+  name: string;
+  town: string;
+  hasDog: boolean;
+}
+const usersT: SimpleUser[] = [
   {
     id: 'u_1',
     name: 'John',
@@ -24,6 +30,17 @@ const rez = {
   u_2: { name: 'Jill', town: 'Kaunas', hasDog: true },
   u_3: { name: 'Serbentautas', town: 'Klaipeda', hasDog: true },
 };
+
+const extractTownAndName = ({ name, town }: SimpleUser): NameAndTownUser => ({ name, town });
+// 2 grazina masyva kurio objektai turi tik name ir town
+type NameAndTownUser = Pick<SimpleUser, 'name' | 'town'>;
+
+function getNameTown(arr: SimpleUser[]): NameAndTownUser[] {
+  const nameAndTown: NameAndTownUser[] = arr.map(extractTownAndName);
+  return nameAndTown;
+}
+
+console.log(getNameTown(usersT));
 
 const houses = [
   {
